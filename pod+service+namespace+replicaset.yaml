@@ -24,6 +24,11 @@ spec:
           image: mariadb
           ports:
             - containerPort: 3306
+          env:
+            - name: MARIADB_ROOT_PASSWORD
+              value: 'omkar@123'
+            - name: MARIADB_DATABASE
+              value: masterBoy    
 ---
 apiVersion: v1
 kind: Service
