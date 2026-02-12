@@ -18,14 +18,7 @@ spec:
   awsElasticBlockStore:
     volumeID: vol-097271e5751a9cd01
     fsType: ext4
-  nodeAffinity:
-    required:
-      nodeSelectorTerms:
-      - matchExpressions:
-        - key: topology.kubernetes.io/zone
-          operator: In
-          values:
-          - ap-southeast-1a   
+  
 
 ---
 apiVersion: v1
@@ -56,7 +49,7 @@ spec:
          ports:
            - containerPort: 80
          volumeMounts:
-            - mountPath: "/usr/share/nginx/html"
+            - mountPath: "/opt"
               name: my-vol
    volumes:  
        - name: my-vol
